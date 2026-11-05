@@ -42,7 +42,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (request.headers.get("Upgrade") !== "websocket") {
-      return new Response("TestGame relay is running.\n", { status: url.pathname === "/" ? 200 : 426 });
+      return new Response("TestGame relay is running (v2, reconnect).\n", { status: url.pathname === "/" ? 200 : 426 });
     }
     let code;
     let role;
