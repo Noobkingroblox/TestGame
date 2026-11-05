@@ -1,0 +1,14 @@
+# The online relay for TestGame's friends multiplayer. Deploy from the
+# Cloudflare dashboard (Workers & Pages > Create > Import a repository, root
+# directory "relay") or with `npx wrangler deploy` in this folder.
+name = "testgame-relay"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+[[durable_objects.bindings]]
+name = "ROOMS"
+class_name = "Room"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Room"]
